@@ -25,7 +25,6 @@ async function init () {
  */
 async function postEvent (event) {
   // var result
-  console.log('sachin', event)
   if (_.has(event, 'payload')) {
     helper.validateEventPayload(event)
 
