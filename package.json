@@ -1,0 +1,34 @@
+{
+  "name": "topcoder-meta-services-rest-api",
+  "version": "5.0.0",
+  "description": "REST API for Topcoder Meta Services.  This describes a service that can give information on other services existing on Topcoder.  Available service links can be listed by sending GET request. Also, each service can return links to further services in their responses.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "standard --fix"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^1.30.0",
+    "express": "^4.17.1",
+    "get-parameter-names": "^0.3.0",
+    "http-errors": "^1.6.3",
+    "joi": "^13.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.10",
+    "no-kafka": "^3.2.10",
+    "require-dir": "^1.2.0",
+    "winston": "^3.0.0"
+  },
+  "engines": {
+    "node": "~8"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
