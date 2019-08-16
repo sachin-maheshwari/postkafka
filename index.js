@@ -37,5 +37,5 @@ app.use((err, req, res, next) => {
 MessageBusService.init()
   .then(() => {
     app.listen(config.PORT, '0.0.0.0')
-    logger.info('Express server listening on port %d in %s mode', config.PORT, process.env.NODE_ENV)
+    logger.info(`Express server listening on port ${config.PORT}`)
   })

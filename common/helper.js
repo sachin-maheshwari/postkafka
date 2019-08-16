@@ -91,32 +91,6 @@ function buildService (service) {
 }
 
 /**
- * Verify the JWT token and get the payload.
- *
- * @param {String} token the JWT token to verify
- * @returns {Object} the payload decoded from the token
- */
-function verifyJwtToken (token) {
-  let payload
-
-  try {
-    payload = jwt.verify(token, config.JWT_TOKEN_SECRET)
-  } catch (err) {
-    if (err.message === 'jwt expired') {
-      throw createError.Unauthorized('Token has been expired')
-    }
-
-    throw createError.Unauthorized('Failed to verify token')
-  }
-
-  if (!payload) {
-    throw createError.Unauthorized('Failed to decode token')
-  }
-
-  return payload
-}
-
-/**
  * Validate the event payload
  *
  * @param {Object} event the event payload
@@ -143,17 +117,7 @@ function validateEventPayload (event) {
   }
 }
 
-function verifyTokenScope (req, scope) {
-  const isMachineToken = _.get(req.swagger.params, 'authUser.isMachine', false)
-  const scopes = _.get(req.swagger.params, 'authUser.scopes', [])
-  if (isMachineToken && !(_.indexOf(scopes, scope) >= 0)) {
-    throw createError.Unauthorized('Check your token scope.')
-  }
-}
-
 module.exports = {
   buildService,
-  verifyJwtToken,
   validateEventPayload,
-  verifyTokenScope
 }
