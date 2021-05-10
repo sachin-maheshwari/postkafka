@@ -20,7 +20,7 @@
     "http-errors": "^1.6.3",
     "joi": "^13.4.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "no-kafka": "^3.2.10",
     "require-dir": "^1.2.0",
     "winston": "^3.0.0"
