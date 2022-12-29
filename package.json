@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
-    "config": "^1.30.0",
+    "config": "^3.3.8",
     "express": "^4.17.1",
     "get-parameter-names": "^0.3.0",
     "http-errors": "^1.6.3",
